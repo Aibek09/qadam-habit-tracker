@@ -22,6 +22,9 @@ The app combines permanent daily habits with **Meteors** — one-off tasks that 
 - Permanent habits that automatically appear every day
 - One-day **Meteor** tasks for changing priorities
 - Quantitative progress tracking: pages, minutes, repetitions, prayers, or custom units
+- Built-in focus timer linked to minute-based tasks
+- Start, pause, resume, and finish controls with automatic progress logging
+- Active timer recovery after an accidental refresh
 - One-tap completion for binary habits
 - Daily completion ring with a weighted percentage
 - Weekly and monthly reports
@@ -41,12 +44,17 @@ The app combines permanent daily habits with **Meteors** — one-off tasks that 
 | Habit | Repeats every day | Read 20 pages |
 | Meteor | Exists on one selected day | Prepare tomorrow's presentation |
 | Progress entry | Records the actual result | 18 of 20 pages |
+| Focus session | Adds measured time to a linked task | 24.5 of 60 minutes |
 
 Daily progress is calculated from the capped completion ratio of every task:
 
 `completion = min(actual / target, 1)`
 
 This means partial work counts, while exceeding a target does not distort the day’s percentage.
+
+### Focus timer
+
+Choose any task whose unit is `min`, start the timer, and pause whenever needed. A paused session can be resumed or finished. Finishing converts elapsed seconds into minutes, rounds the result to one decimal place, and adds it to that task’s existing progress for the selected day. An unfinished session is kept locally so a page refresh does not erase it.
 
 ## Technology
 
